@@ -7,10 +7,6 @@ build:
   stage: build
   tags:
     - docker
-  before_script:
-    - echo ${CI_JOB_TOKEN} | 
-      docker login -u gitlab-ci-token --password-stdin
-      gitlab.valerie-et-guillaume.com:10444  
   script:
     - wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
     - java -jar BuildTools.jar --rev 1.13
