@@ -1,5 +1,8 @@
 image: ${CI_REGISTRY}/rey/debian-ci/java-ci:latest
 
+variables:
+  SPIGOT_VERSION: "1.13-pre7"
+
 stages:
   - build
 
@@ -8,5 +11,10 @@ build:
   tags:
     - docker
   script:
+    - java -version
     - wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
-    - java -jar BuildTools.jar --rev 1.13
+    - java -jar BuildTools.jar --rev ${SPIGOT_VERSION}
+  artifacts:
+    paths:
+    - spigot-${SPIGOT_VERSION}.jar
+    - craftbukkit-${SPIGOT_VERSION}.jar
