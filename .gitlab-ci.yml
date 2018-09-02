@@ -14,7 +14,9 @@ build:
     - java -version
     - wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
     - java -jar BuildTools.jar --rev ${SPIGOT_VERSION}
+    - mv spigot-${SPIGOT_VERSION}.jar spigot.jar
+    - mv craftbukkit-${SPIGOT_VERSION}.jar craftbukkit.jar
   artifacts:
     paths:
-    - spigot-${SPIGOT_VERSION}.jar
-    - craftbukkit-${SPIGOT_VERSION}.jar
+    - spigot.jar
+    - craftbukkit.jar

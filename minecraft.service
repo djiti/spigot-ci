@@ -1,0 +1,20 @@
+[Unit]
+Description=Spigot Minecraft Server
+RequiresMountsFor=/misc/mine
+Wants=network.target network-online.target autofs.service
+After=network.target network-online.target autofs.service
+
+[Service]
+Type=forking
+User=minecraft
+Restart=always
+Group=minecraft
+WorkingDirectory=/misc/mine/build
+ExecStart=/usr/bin/tmux new-session -d -s spigot "java -jar -Xms750M -Xmx750M spigot.jar nogui"
+ExecReload=/usr/bin/tmux send-keys -t spigot reload Enter
+ExecStop=/usr/bin/tmux send-keys -t spigot 'say SERVER SHUTTING DOWN in 5s' C-m
+ExecStop=/bin/sleep 5
+ExecStop=/usr/bin/tmux send-keys -t spigot stop Enter
+
+[Install]
+WantedBy=multi-user.target
