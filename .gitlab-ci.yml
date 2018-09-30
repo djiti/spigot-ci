@@ -5,6 +5,7 @@ variables:
 
 stages:
   - build
+  - deploy
 
 build:
   stage: build
@@ -20,3 +21,10 @@ build:
     paths:
     - spigot.jar
     - craftbukkit.jar
+
+deploy:
+  stage: deploy
+  tags:
+    - salt-master
+  script:
+    - cp * /srv/salt/spigot
