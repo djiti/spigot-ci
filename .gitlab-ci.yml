@@ -7,7 +7,7 @@ stages:
   - build
   - deploy
 
-build:
+.compile:
   stage: build
   tags:
     - docker
