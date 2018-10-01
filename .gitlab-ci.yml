@@ -7,7 +7,7 @@ stages:
   - build
   - deploy
 
-.compile:
+compile:
   stage: build
   tags:
     - docker
@@ -27,4 +27,4 @@ deploy:
   tags:
     - salt-master
   script:
-    - rsync --delete -a --exclude .git . /srv/salt/spigot/
+    - rsync --delete -a --exclude .gitlab-ci.yml --exclude .git . /srv/salt/spigot/
