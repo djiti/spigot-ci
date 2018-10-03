@@ -1,6 +1,8 @@
 spigot is running:
   service.running:
-    - name: java
+    - name: minecraft
+    - watch:
+      - cmd: spigot is rotated
     - watch:
       - file: /etc/systemd/system/minecraft.service
   file.managed:
@@ -10,11 +12,18 @@ spigot is running:
     - user: root
     - group: root
 
+spigot is rotated:
+  cmd.run:
+    - name: /usr/local/sbin/rotate-spigot
+    - require:
+      - file: rotate-spigot is distributed
+    - onchanges:
+      - file: build is distributed
+
 build is distributed:
   file.recurse:
     - name: /misc/mine/build
-    - prereq:
-      - cmd: spigot is rotated
+    - source: salt://spigot/build
 
 rotate-spigot is distributed:
   file.managed:
@@ -24,10 +33,3 @@ rotate-spigot is distributed:
     - user: root
     - group: root
 
-spigot is rotated:
-  cmd.run:
-    - /usr/local/sbin/rotate-spigot
-    - require:
-      - file: rotate-spigot is distributed
-    - onchanges:
-      - file: build is distributed
