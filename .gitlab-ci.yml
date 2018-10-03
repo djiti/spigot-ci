@@ -12,6 +12,7 @@ compile:
   tags:
     - docker
   script:
+    - cd build
     - java -version
     - wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
     - java -jar BuildTools.jar --rev ${SPIGOT_VERSION}
@@ -19,8 +20,8 @@ compile:
     - mv craftbukkit-${SPIGOT_VERSION}.jar build/craftbukkit.jar
   artifacts:
     paths:
-    - spigot.jar
-    - craftbukkit.jar
+    - build/spigot.jar
+    - build/craftbukkit.jar
 
 deploy:
   stage: deploy
