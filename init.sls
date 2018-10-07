@@ -20,7 +20,7 @@ minecraft.service is managed:
     - user: root
     - group: root
   module.run:
-    - name: service.systemctl_reload
+    - service.systemctl_reload:
     - onchanges:
       - file: minecraft.service is managed
 
