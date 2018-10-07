@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/bash -x
 NOW=$(date '+%Y%m%d%H%M%S')
 systemctl stop minecraft
 mv /misc/mine/build /misc/mine/build-${NOW}
 mkdir /misc/mine/build
-chown minecraft:minecraft /misc/mine/build
 cp -auf /misc/mine/build-${NOW}/world /misc/mine/build/

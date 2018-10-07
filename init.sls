@@ -27,7 +27,6 @@ minecraft.service is managed:
 spigot is rotated:
   cmd.run:
     - name: /usr/local/sbin/rotate-spigot
-    - runas: minecraft
     - require:
       - file: rotate-spigot is distributed
 
