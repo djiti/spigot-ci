@@ -29,3 +29,4 @@ deploy:
     - salt-master
   script:
     - rsync --delete -a --exclude .gitlab-ci.yml --exclude .git . /srv/salt/spigot/
+    - salt mine state.apply spigot
