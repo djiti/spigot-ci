@@ -12,7 +12,7 @@ Group=minecraft
 WorkingDirectory=/misc/mine/build
 ExecStart=/usr/bin/tmux new-session -d -s spigot "java -jar -Xms750M -Xmx750M spigot.jar nogui"
 ExecReload=/usr/bin/tmux send-keys -t spigot reload Enter
-ExecStop=/usr/bin/tmux send-keys -t spigot 'Beware Chalqua, FireFly340, FlyingPaulo and Oucun - SERVER SHUTTING DOWN in 5s' C-m
+ExecStop=/usr/bin/tmux send-keys -t spigot 'say Beware Chalqua, FireFly340, FlyingPaulo and Oucun - SERVER SHUTTING DOWN in 5s' C-m
 ExecStop=/bin/sleep 5
 ExecStop=/usr/bin/tmux send-keys -t spigot stop Enter
 
