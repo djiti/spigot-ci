@@ -2,4 +2,4 @@
 export LC_CTYPE=en_GB.UTF-8
 su -c '/usr/bin/tmux send-keys -t spigot version Enter' minecraft
 sleep 5
-su -c '/usr/bin/tmux capture-pane -pt "$target-pane" -S 30' minecraft
+su -c '/usr/bin/tmux capture-pane -pt "$target-pane"' minecraft
