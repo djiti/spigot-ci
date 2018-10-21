@@ -1,3 +1,11 @@
+spigot-ver is distributed:
+  file.managed:
+    - name: /usr/local/sbin/spigot-ver
+    - source: salt://spigot/spigot-ver
+    - mode: 755
+    - user: root
+    - group: root
+
 rotate-spigot is distributed:
   file.managed:
     - name: /usr/local/sbin/rotate-spigot

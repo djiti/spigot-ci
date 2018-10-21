@@ -29,4 +29,8 @@ deploy:
     - salt-master
   script:
     - rsync --delete -a --exclude .gitlab-ci.yml --exclude .git . /srv/salt/spigot/
+    - sudo /usr/bin/salt mine test.ping
     - sudo /usr/bin/salt mine state.apply spigot
+    - sleep 120
+    - sudo /usr/bin/salt mine test.ping
+    - sudo /usr/bin/salt mine cmd.run /usr/local/sbin/spigot-ver
