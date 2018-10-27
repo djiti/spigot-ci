@@ -1,6 +1,8 @@
 # Spigot
 
-[link](https://www.spigotmc.org/)
+![Pipeline badge](/rey/spigot/badges/master/pipeline.svg) 
+
+[Link](https://www.spigotmc.org/)
 
 
 # Manual stuff
