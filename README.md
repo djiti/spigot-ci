@@ -1,6 +1,6 @@
 # Spigot
 
-![Pipeline badge](/rey/spigot/badges/master/pipeline.svg) 
+![Pipeline badge](https://gitlab.valerie-et-guillaume.com:10443/rey/spigot/badges/master/pipeline.svg) 
 
 [Link](https://www.spigotmc.org/)
 
