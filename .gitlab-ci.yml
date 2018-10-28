@@ -25,6 +25,9 @@ compile:
 
 deploy:
   stage: deploy
+  only:
+    - tags
+    - schedules
   tags:
     - salt-master
   script:
