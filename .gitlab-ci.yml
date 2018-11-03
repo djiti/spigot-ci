@@ -1,4 +1,4 @@
-image: ${CI_REGISTRY}/rey/debian-ci:latest
+image: ${CI_REGISTRY}/rey/debian-ci/java:latest
 
 variables:
   SPIGOT_VERSION: "1.13.2"
@@ -29,8 +29,7 @@ test:
   tags:
     - docker
   script:
-  # Assumes somebody has done regularly
-  # docker run --user root --rm -v /srv/mine/build/world/:/world_from -v minecraft-world:/world_to debian-ci rsync -a --delete /world_from/ /world_to
+  # We are using that the #docker runners have access to a /world volume containing a backup of a test world
     - cp -auf /world build/
     - cd build
     - export LC_CTYPE=en_US.UTF-8
