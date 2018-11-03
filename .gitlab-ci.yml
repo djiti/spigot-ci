@@ -37,7 +37,7 @@ test:
     - /usr/bin/tmux new-session -d -s spigot "java -Xms300M -Xmx300M -XX:+UseConcMarkSweepGC -jar spigot.jar nogui"
     - sleep 60
     - /usr/bin/tmux send-keys -t spigot version Enter
-    - sleep 5
+    - sleep 20
     - /usr/bin/tmux capture-pane -pt "$target-pane"
     - /usr/bin/tmux capture-pane -pt "$target-pane" | grep 'Done'
     - /usr/bin/tmux capture-pane -pt "$target-pane" | grep 'You are running the latest version'
