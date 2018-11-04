@@ -29,7 +29,7 @@ test:
   tags:
     - docker
   script:
-  # We are using that the #docker runners have access to a /world volume containing a backup of a test world
+  # We are assuming that the #docker runners have access to a /world volume containing a backup of a test world
     - cp -auf /world build/
     - cd build
     - export LC_CTYPE=en_US.UTF-8
