@@ -5,3 +5,4 @@ mv /misc/mine/build /misc/mine/build-${NOW}
 mkdir /misc/mine/build
 cp -auf /misc/mine/build-${NOW}/world /misc/mine/build/
 cp -auf /misc/mine/build-${NOW}/world_nether /misc/mine/build/
+cp -auf /misc/mine/build-${NOW}/world_the_end /misc/mine/build/
