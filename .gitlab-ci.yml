@@ -54,4 +54,4 @@ deploy:
     - sudo /usr/bin/salt mine -t 600 state.apply spigot
     - sleep 240
     - sudo /usr/bin/salt mine -t 600 test.ping
-    - sudo /usr/bin/salt mine -t 600 cmd.run /usr/local/sbin/spigot-ver
+    - sudo /usr/bin/salt mine -t 600 cmd.run /usr/local/sbin/spigot-ver | grep -E 'Done|version'
