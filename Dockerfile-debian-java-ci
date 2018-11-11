@@ -8,7 +8,7 @@ RUN apt-get -qy update \
     && apt-get -qy install \
       git \
       locales \
-      openjdk-8-jre-headless=8u171-b11-1~deb9u1 \
+      openjdk-8-jre-headless \
       tmux \
       wget \
     && echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen \
